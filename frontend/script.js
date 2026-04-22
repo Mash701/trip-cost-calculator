@@ -1,3 +1,5 @@
+const API_BASE = "https://trip-cost-api-9bxx.onrender.com";
+
 const fromInput = document.getElementById("fromInput");
 const toInput = document.getElementById("toInput");
 
@@ -24,14 +26,9 @@ let toMarker = null;
 let routeLine = null;
 
 async function fetchSuburbs(query) {
-  const API_BASE = "https://YOUR-BACKEND-NAME.onrender.com";
-
-async function fetchSuburbs(query) {
   const res = await fetch(
     `${API_BASE}/search_suburbs?q=${encodeURIComponent(query)}`
   );
-  return await res.json();
-}
   return await res.json();
 }
 
