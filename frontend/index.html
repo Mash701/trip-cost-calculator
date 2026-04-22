@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trip Cost Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet/dist/leaflet.css"
+  />
+</head>
+<body>
+  <div class="page-shell">
+    <div class="app-card">
+      <div class="hero">
+        <div class="hero-badge">Smart Travel Estimator</div>
+        <h1>Trip Cost Calculator</h1>
+        <p>
+          Compare suburbs, view the route on a map, and estimate fuel usage and trip cost.
+        </p>
+      </div>
+
+      <div class="form-grid">
+        <div class="panel">
+          <div class="panel-title">Route Details</div>
+
+          <div class="search-box">
+            <label for="fromInput">From Suburb</label>
+            <input
+              type="text"
+              id="fromInput"
+              placeholder="Type origin suburb..."
+              autocomplete="off"
+            />
+            <div id="fromResults" class="results"></div>
+          </div>
+
+          <div class="swap-wrap">
+            <button id="swapButton" class="swap-button" type="button">
+              ⇅ Swap Route
+            </button>
+          </div>
+
+          <div class="search-box">
+            <label for="toInput">To Suburb</label>
+            <input
+              type="text"
+              id="toInput"
+              placeholder="Type destination suburb..."
+              autocomplete="off"
+            />
+            <div id="toResults" class="results"></div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-title">Fuel Inputs</div>
+
+          <div class="search-box">
+            <label for="fuelPrice">Fuel Price (per litre)</label>
+            <input
+              type="number"
+              id="fuelPrice"
+              placeholder="e.g. 1.80"
+              step="0.01"
+            />
+          </div>
+
+          <div class="search-box">
+            <label for="efficiency">Fuel Efficiency (km per litre)</label>
+            <input
+              type="number"
+              id="efficiency"
+              placeholder="e.g. 14"
+              step="0.1"
+            />
+          </div>
+
+          <div id="selectedInfo" class="info-card">
+            <div class="info-placeholder">Select suburbs to see trip details.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-panel">
+        <div class="panel-title">Route Map</div>
+        <div id="map"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
